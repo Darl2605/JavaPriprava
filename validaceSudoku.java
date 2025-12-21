@@ -8,13 +8,12 @@ import java.util.Scanner;
 
 /**
  *
- * @author Dany
+ * @author sedla
+ * 
+ * sudoku pouzite pro zkousku
+ * 
+ * 7 9 2 1 5 4 3 8 6 6 4 3 8 2 7 1 5 9 8 5 1 3 9 6 7 2 4 2 6 5 9 7 3 8 4 1 4 8 9 5 6 1 2 7 3 3 1 7 4 8 2 9 6 5 1 3 6 7 4 8 5 9 2 9 7 4 2 1 5 6 3 8 5 2 8 6 3 9 4 1 7
  */
-/*
- pro test jsem pouzil nasledujici sudoku
-
-  7 9 2 1 5 4 3 8 6 6 4 3 8 2 7 1 5 9 8 5 1 3 9 6 7 2 4 2 6 5 9 7 3 8 4 1 4 8 9 5 6 1 2 7 3 3 1 7 4 8 2 9 6 5 1 3 6 7 4 8 5 9 2 9 7 4 2 1 5 6 3 8 5 2 8 6 3 9 4 1 7
-*/
 public class zadani_jedna {
     public static final int[] nums = {1,2,3,4,5,6,7,8,9};
     public static void main(String[] args) {
@@ -74,7 +73,7 @@ public class zadani_jedna {
     {
         int[] row = new int[9];
         for (int i = 0; i < row.length; i++) {
-            row[i] = pole[i][RowIDX];
+            row[i] = pole[RowIDX][i];
         }
         return checks(row);
     }
@@ -123,9 +122,9 @@ public class zadani_jedna {
     static boolean subArrCheck(int[][] sub)
     {
         boolean check = true;
-        boolean found = true;
+   
         for (int i = 0; i < 9; i++) {
-            if(check && found){
+            if(check){
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {
                     if(nums[i] == sub[j][k]){
